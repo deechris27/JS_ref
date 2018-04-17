@@ -116,20 +116,49 @@ function reverseStr(str){
   }
 
   function occurrenceM(str){
-    let x = {};
+    let characters = {};
+    let maxNum = 0;
+    let maxChar = '';
+
       str.split('').forEach(e=>{
-        if(x[e]){x[e]++;}
-        else{x[e]=1;}
+        if(characters[e]){
+          characters[e]++;
+        }
+        else{
+          characters[e]=1;
+        }
       });
-      for(y in x){
-        debugger;    //node inspect reverse.js
+      console.log('test '+characters.l);
+      for(let y in characters){
+        if(characters[y] > maxNum){
+          console.log('tills ' +characters[y]);
+          maxNum = characters[y];
+          maxChar = y;
+        }
+        //debugger;    //node inspect reverse.js
       }
+      return maxChar.toUpperCase();
   }
 
+
+
+function fizzBuzz(){
+  for(let i =1; i<=100; i++){
+    if(i%3 === 0 && i%5 === 0){
+      console.log('fizzBuzz');
+    }else if(i%3 === 0){
+      console.log('fizz');
+    }else if(i%5 === 0){
+      console.log('Buzz');
+    }
+  }
+}
+
+fizzBuzz();
   console.log(occurrenceM('helloWorld'));
 
-// console.log(capitolizeThem('hello world'));
+console.log(capitolizeThem('hello world'));
 
- //console.log(revInt(-34455));
+ console.log(revInt(-34455));
 
-//console.log(reverseStr('helloo'));
+console.log(reverseStr('helloo'));
