@@ -87,6 +87,36 @@ function reverseStr(str){
       return revString==str ? `${str} is a palindrome` : `${str} is not a palindrome`;
     }
 
- console.log(isPali('hello'));
+   function revInt(num){
+     let revNum = num.toString().split('').reverse().join('');
+      return parseInt(revNum);
+   }
+
+   function revInt(num){
+     let revNum = num.toString().split('').reverse().join('');
+     return parseInt(revNum) * Math.sign(num);
+   }
+
+   function capitolizeThem(str){
+      let strArr = str.toLowerCase().split(' ');
+      for(let i = 0; i<strArr.length; i++){
+        strArr[i] = strArr[i].substr(0,1).toUpperCase() + strArr[i].substr(1);
+      }
+      return strArr.join(' ');
+   }
+
+  function capitolizeThem(str){
+    return str.toLowerCase().split(' ')
+    .map(e => e[0].toUpperCase() + e.substr(1))
+    .join(' ');
+  }
+
+  function capitolizeThem(str){
+    return str.replace(/\b[a-z]/gi, e=> e.toUpperCase());
+  }
+
+console.log(capitolizeThem('hello world'));
+
+ //console.log(revInt(-34455));
 
 //console.log(reverseStr('helloo'));
