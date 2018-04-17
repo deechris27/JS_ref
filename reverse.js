@@ -55,6 +55,38 @@ function reverseStr(str){
     return str.split('').reduce((revString, char)=> char + revString, '');
   }
 
+--------------------
+   function isPali(str){
+      let revString = str.split('').reduce((rev, char)=> char + rev, '');
+      if(str === revString){
+        return 'String is a palindrome';
+      }else{
+        return 'String is not a palindrome';
+      }
+  }
 
+    function isPali(str){
+      let revString = '';
+       str.split('').forEach(e=> revString = e + revString);
+       return str===revString ? `${str} is a palindrome` : `${str} is not a palindrome`;
+    }
 
-console.log(reverseStr('helloo'));
+    function isPali(str){
+      let revString = '';
+      for(let char of str){
+        revString = char + revString;
+      }
+      return str===revString ? `${str} is a palindrome` : `${str} is not a palindrome`;
+    }
+
+    function isPali(str){
+      let revString = '';
+      for(let i = str.length; i>=1; i--){
+        revString += str[i-1];
+      }
+      return revString==str ? `${str} is a palindrome` : `${str} is not a palindrome`;
+    }
+
+ console.log(isPali('hello'));
+
+//console.log(reverseStr('helloo'));
