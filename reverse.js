@@ -115,7 +115,20 @@ function reverseStr(str){
     return str.replace(/\b[a-z]/gi, e=> e.toUpperCase());
   }
 
-console.log(capitolizeThem('hello world'));
+  function occurrenceM(str){
+    let x = {};
+      str.split('').forEach(e=>{
+        if(x[e]){x[e]++;}
+        else{x[e]=1;}
+      });
+      for(y in x){
+        debugger;    //node inspect reverse.js
+      }
+  }
+
+  console.log(occurrenceM('helloWorld'));
+
+// console.log(capitolizeThem('hello world'));
 
  //console.log(revInt(-34455));
 
