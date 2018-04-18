@@ -1,4 +1,4 @@
-Program to find the length of a tring without length method.
+Program to find the length of a string without length method.
 
 function strLength(s) {
   var length = 0;
