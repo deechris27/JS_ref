@@ -36,5 +36,58 @@ function longestWord(sen) {
   return outputArr.length > 1 ? outputArr : outputArr[0];
 }
 
+   function chunkArray(arr, len){
+     let chunkedArr = [];
+     let i = 0;
+     while(i < arr.length){
+        chunkedArr.push(arr.slice(i, i + len));
+        i += len;
+     }
+        return chunkedArr;
+   }
+
+   function chunkArray(arr, len){
+
+     let chunkedArr = [];
+
+     arr.forEach((val)=>{
+         const last = chunkedArr[chunkedArr.length-1];
+            console.log(last);
+         if(!last || last.length === len){
+           chunkedArr.push([val]);
+           //console.log(chunkedArr);
+         }else{
+           last.push(val);
+         }
+         console.log('after ' +last);
+
+
+     });
+      return chunkedArr;
+   }
+
+   function chunkArray(arr, len) {
+
+       let i=0, output = [], currArr = [];
+
+       arr.forEach(element => {
+           currArr.push(element);
+           i++;
+           if (i%len === 0 || i === arr.length) {
+               output.push(currArr);
+               currArr = [];
+               }
+           });
+       return output;
+
+    return Array.from({ length: Math.ceil(arr.length / len) }, (v, i) =>
+    arr.slice(i * len, i * len + len)
+    );
+}
+
+
+   console.log(chunkArray([1,2,3,4,5,6,7], 2));
+
+console.log(chunkArray([1,2,3,4,5,6,7], 3));
  console.log(longestWord('hello world'));
 console.log(longestWord('helloo there, my name is dee'));
