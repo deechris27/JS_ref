@@ -85,8 +85,59 @@ function longestWord(sen) {
     );
 }
 
+function flattenArr(arr){
+  return arr.reduce((a,b)=> a.concat(b));
+}
 
-   console.log(chunkArray([1,2,3,4,5,6,7], 2));
+function flattenArr(arr){
+   return [].concat.apply([], arr);
+}
+
+function flattenArr(arr){
+  return arr.reduce((a, b)=> [...a, ...b]);
+}
+
+function flattenArr(arr){
+   return [].concat(...arr);
+}
+
+function lengh(str){
+  let length = 0;
+  while(str[length] != undefined){
+    length++;
+  }
+  return length;
+}
+
+console.log(lengh('Hello World'));
+
+  function isAnagram(str1, str2){
+      return formatString(str1);
+  }
+
+  function formatString(str){
+      return str.replace(/[^\w]/g,'')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('');
+  }
+
+  function letterChanges(str){
+      let result = str.replace(/[a-z]/gi, (char)=>{
+        if(char == 'z' || char == 'Z'){
+          return 'a';
+        }else{
+          return String.fromCharCode(char.charCodeAt()+1);
+        }
+      });
+      return result;
+  }
+
+console.log(letterChanges('Hello There'));
+console.log(isAnagram("Hello%#$","World"));
+
+console.log(flattenArr([[1,2],[3,4],[5,6],[7]]));
 
 console.log(chunkArray([1,2,3,4,5,6,7], 3));
  console.log(longestWord('hello world'));

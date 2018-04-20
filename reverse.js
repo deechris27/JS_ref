@@ -157,8 +157,8 @@ function fizzBuzz(){
 fizzBuzz();
   console.log(occurrenceM('helloWorld'));
 
-console.log(capitolizeThem('hello world'));
+ console.log(capitolizeThem('hello world'));
 
  console.log(revInt(-34455));
 
-console.log(reverseStr('helloo'));
+ console.log(reverseStr('helloo'));
